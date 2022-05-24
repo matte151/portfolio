@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Matt Edwards Software Engineer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&display=swap');
+    </style>
+
+</head>
+<body>
+  <header class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper orange lighten-2">
+        <ul>
+          <li><a href="/" class="left brand-logo"><span class="red-text text-darken 4">Matt Edwards</span></a></li>
+        </ul>
+        <ul class="right">
+          <li><a href="/coding">Expertise</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/resume">Resume</a></li>
+          <li><a href="/personal">Personal</a></li>
+          {% comment %} <li><a href="/signup">Sign Up</a></li> {% endcomment %}
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    {% block content %}
+    {% endblock %}
+  </main>
+  <footer class="page-footer orange lighten-2">
+    <div class="right">All Rights Reserved, &copy; 2022 Matt Edwards &nbsp;</div>
+  </footer>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>
