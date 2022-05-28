@@ -28,12 +28,11 @@ class Blurb(models.Model):
     page = models.ForeignKey(Page, on_delete=models.CASCADE)
     blurbHeader = models.CharField(max_length=100)
     blurb= models.CharField(max_length=500)
+    url = models.CharField(max_length=250)
 
     def __str__(self):
         return f"Page: {self.page.name} Blurb: {self.blurbHeader}"
 
-class BlurbPhoto(models.Model):
-    blurb = models.ForeignKey(Blurb, on_delete=models.CASCADE)
-    url = models.CharField(max_length=250)
+
 
 

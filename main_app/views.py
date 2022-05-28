@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import requests
 
-from .models import Page, Photo, Blurb, BlurbPhoto
+from .models import Page, Photo, Blurb
 
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -18,12 +18,16 @@ def home(request):
   return render(request, 'home.html', {'blurbs': blurbs, })
 
 def resume(request):
-  blurbs = Blurb.objects.filter(page__name="Resume")
-  return render(request, 'resume/index.html', {'blurbs': blurbs, })
+  with open('main_app/pdf/MattEdwardsResume.pdf', 'rb') as pdf:
+        response = HttpResponse(pdf.read(), content_type='application/pdf')
+        response['Content-Disposition'] = 'inline;filename=some_file.pdf'
+        return response
+
 
 def projects(request):
-  print(BUCKET)
+  # print(BUCKET)
   blurbs = Blurb.objects.filter(page__name="Projects")
+
   print(blurbs, "<------ blurbs")
   return render(request, 'projects/index.html', {'blurbs': blurbs, })
 

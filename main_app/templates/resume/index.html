@@ -1,12 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{% for blurb in blurbs %}
-<div class="card">
-    <div class="card-content">
-        <span class="card-title">{{blurb.blurbHeader}}</span>
-        <p class="flow-text">{{blurb.blurb}}</p>
-    </div>
-</div>
+
 {% endfor %}
 {% endblock %}

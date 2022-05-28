@@ -40,3 +40,11 @@ h1 {
     font-family: 'Fredericka the Great', cursive;
     
 }
+img{
+    max-width: 100%;
+    height: auto;
+}
+.projectImageSmall{
+    max-width: 500px;
+    height: auto;
+}
