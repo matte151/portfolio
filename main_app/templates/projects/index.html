@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{% for blurb in blurbs %}
+{% comment %} {% for blurb in blurbs %}
 
 
 <div class="card">
@@ -16,6 +16,69 @@
     </div>
 </div>
 
-{% endfor %}
+{% endfor %} {% endcomment %}
+<div class="col d-flex justify-content-center">
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{ blurbs.0.url }}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{blurbs.0.blurbHeader}}</h5>
+          <p class="card-text">{{blurbs.0.blurb}}</p>
+          {% comment %} <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> {% endcomment %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{blurbs.1.blurbHeader}}</h5>
+          <p class="card-text">{{blurbs.1.blurb}}</p>
+          {% comment %} <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> {% endcomment %}
+        </div>
+      </div>
+      <div class="col-md-4">
+        <img src="{{ blurbs.1.url }}" class="img-fluid rounded-start" alt="...">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col d-flex justify-content-center" style="background-color: #ddddf8">
+    <div class="card mb-3">
+        <img src="{{blurbs.2.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{blurbs.2.blurbHeader}}</h5>
+          <p class="card-text">{{blurbs.2.blurb}}</p>
+          {% comment %} <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> {% endcomment %}
+        </div>
+      </div>
+    </div>
+    <div class="col d-flex justify-content-center">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{blurbs.3.blurbHeader}}</h5>
+          <p class="card-text">{{blurbs.3.blurb}}</p>
+          {% comment %} <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> {% endcomment %}
+        </div>
+        <img src="{{blurbs.3.url}}" class="card-img-bottom" alt="...">
+      </div>
+
+</div>
+<div class="col d-flex justify-content-center">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{blurbs.4.blurbHeader}}</h5>
+        <p class="card-text">{{blurbs.4.blurb}}</p>
+        {% comment %} <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> {% endcomment %}
+      </div>
+      <img src="{{blurbs.4.url}}" class="card-img-bottom" alt="...">
+    </div>
+
+</div>
+
 
 {% endblock %}
